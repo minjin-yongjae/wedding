@@ -15,8 +15,7 @@
     "bus": "선릉역 정류장 하차 (간선: 146, 341, 360 / 지선: 4412)",
     "parking": "건물 내 지하 주차장 이용 (하객 2시간 무료 주차)",
     "kakao": "https://kko.to/M3hHQ5aIwQ",
-    "naver": "https://naver.me/GZDPBDgT",
-    "tmap": "https://tmap.co.kr/"
+    "naver": "https://naver.me/GZDPBDgT"
   },
 
   "storyImages": [
