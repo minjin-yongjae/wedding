@@ -34,7 +34,6 @@ const weddingData = {
     parking: "건물 내 지하 주차장 이용 (하객 2시간 무료 주차)",
     naverMapUrl: "https://naver.me/GZDPBDgT",
     kakaoMapUrl: "https://kko.to/bbZQlYLr2L",
-    tmapUrl: "https://tmap.co.kr"
   },
 
   galleryImages: [
@@ -117,7 +116,6 @@ function initPageData() {
   // 지도 버튼 링크
   setHref("naverMap", weddingData.venue.naverMapUrl);
   setHref("kakaoMap", weddingData.venue.kakaoMapUrl);
-  setHref("tmap", weddingData.venue.tmapUrl);
 }
 
 /* ==========================================
