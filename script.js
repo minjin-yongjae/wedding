@@ -39,10 +39,10 @@ const weddingData = {
   galleryImages: [
     "images/gallery/1.jpg",
     "images/gallery/2.jpg",
-    "images/gallery/3.jpg",
-    "images/gallery/4.jpg",
-    "images/gallery/5.jpg",
-    "images/gallery/6.jpg", 
+    "images/gallery/3.JPG",
+    "images/gallery/4.JPG",
+    "images/gallery/5.JPG",
+    "images/gallery/6.JPG", 
   ]
 };
 
