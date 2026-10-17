@@ -390,11 +390,13 @@
 
     .gallery-item {
       width: 100%;
-      aspect-ratio: 4 / 5;
+      aspect-ratio: 3 / 4;
       border-radius: 4px;
       overflow: hidden;
       background: #1a1a1a;
-      cursor: pointer;
+      cursor: default;
+      user-select: none;
+      -webkit-user-select: none;
     }
 
     .gallery-item img {
@@ -402,6 +404,16 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      pointer-events: none;
+      -webkit-user-drag: none;
+    }
+
+    .gallery-subtitle {
+      margin: -8px 0 22px;
+      color: #aaa;
+      font-size: 0.82rem;
+      line-height: 1.7;
+      text-align: center;
     }
 
     /* 공통 박스 */
@@ -1104,6 +1116,48 @@
         id="ddayCount"
       >
         00 : 00 : 00 : 00
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GALLERY SECTION -->
+  <section class="section" id="gallerySection">
+
+    <div class="section-title">
+      GALLERY
+    </div>
+
+    <div class="gallery-subtitle">
+      저희의 소중한 순간들을 담았어요.
+    </div>
+
+    <div class="photo-grid">
+
+      <div class="gallery-item">
+        <img src="images/gallery/1.jpg" alt="웨딩 갤러리 사진 1" loading="lazy" draggable="false">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery/2.jpg" alt="웨딩 갤러리 사진 2" loading="lazy" draggable="false">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery/3.jpg" alt="웨딩 갤러리 사진 3" loading="lazy" draggable="false">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery/4.jpg" alt="웨딩 갤러리 사진 4" loading="lazy" draggable="false">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery/5.jpg" alt="웨딩 갤러리 사진 5" loading="lazy" draggable="false">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery/6.jpg" alt="웨딩 갤러리 사진 6" loading="lazy" draggable="false">
       </div>
 
     </div>
