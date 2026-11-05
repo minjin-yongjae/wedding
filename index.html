@@ -875,6 +875,35 @@
       letter-spacing: 2px;
       color: #aaaaaa;
     }
+    /* ======================================================
+       계좌 정보 정리
+    ====================================================== */
+    .account-row {
+      gap: 10px;
+    }
+
+    .account-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      min-width: 0;
+    }
+
+    .account-num {
+      font-size: 0.85rem;
+      color: #dddddd;
+      white-space: nowrap;
+    }
+
+    .account-owner {
+      font-size: 0.85rem;
+      color: #999999;
+    }
+
+    .copy-btn {
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
     
   </style>
 </head>
@@ -1394,11 +1423,12 @@
 
         <div class="account-content">
 
-          <div class="account-row">
+           <div class="account-row">
 
-            <span>
-              하나은행 748-91118-707707 (이용재) (이강목·임남영)
-            </span>
+            <div class="account-info">
+              <span class="account-num">하나은행 748-91118-707707</span>
+              <span class="account-owner">이용재 (이강목 · 임남영)</span>
+            </div>
 
             <button
               class="copy-btn"
@@ -1408,7 +1438,6 @@
             </button>
 
           </div>
-
         </div>
 
       </div>
@@ -1433,9 +1462,10 @@
 
           <div class="account-row">
 
-            <span>
-              하나은행 183-910541-33907 (이민진) (이만수·조은영)
-            </span>
+            <div class="account-info">
+              <span class="account-num">하나은행 183-910541-33907</span>
+              <span class="account-owner">이민진 (이만수 · 조은영)</span>
+            </div>
 
             <button
               class="copy-btn"
@@ -1455,7 +1485,7 @@
       신랑신부 계좌로 보내주시면 양가혼주께서도 확인이 가능합니다.<br>
       따뜻한 마음에 감사드립니다.
     </div>
-
+   </div> 
   </section>
 
 
