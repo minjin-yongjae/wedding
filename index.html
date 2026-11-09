@@ -904,6 +904,33 @@
       flex-shrink: 0;
       white-space: nowrap;
     }
+
+/* 하트 떨어지는 효과 */
+.heart-fall-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 50;
+}
+
+.falling-heart {
+  position: absolute;
+  top: -30px;
+  color: #d88a9a;
+  opacity: 0;
+  animation-name: heartFall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes heartFall {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.85; }
+  90%  { opacity: 0.85; }
+  100% { transform: translate3d(var(--drift), 110vh, 0) rotate(var(--spin)); opacity: 0; }
+}
     
   </style>
 </head>
@@ -1062,6 +1089,7 @@
 
 </div>
 
+<div class="heart-fall-layer" id="heartFallLayer"></div>
 
 <main class="page">
 
@@ -2757,6 +2785,51 @@
 
   }
 
+  // ======================================================
+  // 하트 떨어지는 효과 (커버를 지나면 시작)
+  // ======================================================
+  (function () {
+    const layer = document.getElementById('heartFallLayer');
+    const cover = document.getElementById('coverSection');
+    if (!layer || !cover) return;
+
+    const hearts = ['♥\uFE0E', '♡\uFE0E'];
+    let timer = null;
+
+    function createHeart() {
+      const h = document.createElement('span');
+      h.className = 'falling-heart';
+      h.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+
+      const size = 10 + Math.random() * 14;
+      const duration = 6 + Math.random() * 5;
+
+      h.style.left = Math.random() * 100 + '%';
+      h.style.fontSize = size + 'px';
+      h.style.animationDuration = duration + 's';
+      h.style.setProperty('--drift', (Math.random() * 80 - 40) + 'px');
+      h.style.setProperty('--spin', (Math.random() * 360 - 180) + 'deg');
+
+      layer.appendChild(h);
+      setTimeout(() => h.remove(), duration * 1000);
+    }
+
+    function start() {
+      if (timer) return;
+      timer = setInterval(createHeart, 900);
+    }
+
+    function stop() {
+      clearInterval(timer);
+      timer = null;
+    }
+
+    new IntersectionObserver(function (entries) {
+      entries[0].isIntersecting ? stop() : start();
+    }, { threshold: 0 }).observe(cover);
+  })();
+
+  
 </script>
 
 </body>
